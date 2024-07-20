@@ -1,0 +1,64 @@
+\begin{tabular}{cccccc}
+\tabularnewline \midrule \midrule 
+ \addlinespace 
+ \addlinespace 
+
+\multicolumn{1}{c}{ } & \multicolumn{1}{c}{ } & \multicolumn{2}{c}{$\mathbbm{1}$\{\textit{Payments} $>$ 0\}} & \multicolumn{2}{c}{\textit{Log}({Payments})} \\
+
+\cmidrule(lr){3-4} \cmidrule(lr){5-6}
+ &  & \multicolumn{1}{c}{\textit{OLS}} & \multicolumn{1}{c}{\textit{IV}} & \multicolumn{1}{c}{\textit{OLS}} & \multicolumn{1}{c}{\textit{IV}} \\
+
+\midrule
+\multicolumn{1}{l}{\underline{\textit{Panel A: Whole Sample}}} &  &  &  & &\\ 
+ \addlinespace 
+\multicolumn{1}{l}{Any Treatment} & \multicolumn{1}{c}{\scriptsize $\hat{\beta}$} & \multicolumn{1}{c}{0} & \multicolumn{1}{c}{0.001} & \multicolumn{1}{c}{0.019} & \multicolumn{1}{c}{0.059} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{se}}} & \multicolumn{1}{c}{(0.01)} & \multicolumn{1}{c}{(0.03)} & \multicolumn{1}{c}{(0.06)} & \multicolumn{1}{c}{(0.19)} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{p-value}}} & \multicolumn{1}{c}{0.979} & \multicolumn{1}{c}{0.979} & \multicolumn{1}{c}{0.763} & \multicolumn{1}{c}{0.763} \\
+\multicolumn{1}{l}{Reminder} & \multicolumn{1}{c}{\scriptsize $\hat{\beta}$} & \multicolumn{1}{c}{-0.012} & \multicolumn{1}{c}{-0.024} & \multicolumn{1}{c}{-0.093} & \multicolumn{1}{c}{-0.19} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{se}}} & \multicolumn{1}{c}{(0.01)} & \multicolumn{1}{c}{(0.02)} & \multicolumn{1}{c}{(0.08)} & \multicolumn{1}{c}{(0.16)} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{p-value}}} & \multicolumn{1}{c}{0.251} & \multicolumn{1}{c}{0.251} & \multicolumn{1}{c}{0.23} & \multicolumn{1}{c}{0.23} \\
+\multicolumn{1}{l}{Anchor} & \multicolumn{1}{c}{\scriptsize $\hat{\beta}$} & \multicolumn{1}{c}{0.008} & \multicolumn{1}{c}{0.016} & \multicolumn{1}{c}{0.093} & \multicolumn{1}{c}{0.179} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{se}}} & \multicolumn{1}{c}{(0.01)} & \multicolumn{1}{c}{(0.02)} & \multicolumn{1}{c}{(0.07)} & \multicolumn{1}{c}{(0.13)} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{p-value}}} & \multicolumn{1}{c}{0.368} & \multicolumn{1}{c}{0.367} & \multicolumn{1}{c}{0.177} & \multicolumn{1}{c}{0.177} \\
+\midrule
+\multicolumn{2}{l}{\textit{p-value} (Reminder vs Anchor)}& \multicolumn{1}{c}{0.050}& \multicolumn{1}{c}{0.051}& \multicolumn{1}{c}{0.016}& \multicolumn{1}{c}{0.017}\\
+\multicolumn{2}{l}{Control Mean} &0.626&0.626&4.607&4.607\\
+\multicolumn{2}{l}{Observations} &10,403&10,403&10,403&10,403\\
+\midrule
+\multicolumn{1}{l}{\underline{\textit{Panel B: Below Median}}} &  &  &  & &\\ 
+ \addlinespace
+\multicolumn{1}{l}{Any Treatment} & \multicolumn{1}{c}{\scriptsize $\hat{\beta}$} & \multicolumn{1}{c}{0.008} & \multicolumn{1}{c}{0.024} & \multicolumn{1}{c}{0.095} & \multicolumn{1}{c}{0.291} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{se}}} & \multicolumn{1}{c}{(0.01)} & \multicolumn{1}{c}{(0.04)} & \multicolumn{1}{c}{(0.08)} & \multicolumn{1}{c}{(0.25)} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{p-value}}} & \multicolumn{1}{c}{0.514} & \multicolumn{1}{c}{0.513} & \multicolumn{1}{c}{0.254} & \multicolumn{1}{c}{0.253} \\
+\multicolumn{1}{l}{Reminder} & \multicolumn{1}{c}{\scriptsize $\hat{\beta}$} & \multicolumn{1}{c}{-0.007} & \multicolumn{1}{c}{-0.015} & \multicolumn{1}{c}{-0.038} & \multicolumn{1}{c}{-0.079} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{se}}} & \multicolumn{1}{c}{(0.02)} & \multicolumn{1}{c}{(0.03)} & \multicolumn{1}{c}{(0.1)} & \multicolumn{1}{c}{(0.22)} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{p-value}}} & \multicolumn{1}{c}{0.636} & \multicolumn{1}{c}{0.637} & \multicolumn{1}{c}{0.717} & \multicolumn{1}{c}{0.717} \\
+\multicolumn{1}{l}{Anchor} & \multicolumn{1}{c}{\scriptsize $\hat{\beta}$} & \multicolumn{1}{c}{0.018} & \multicolumn{1}{c}{0.035} & \multicolumn{1}{c}{0.184**} & \multicolumn{1}{c}{0.355**} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{se}}} & \multicolumn{1}{c}{(0.01)} & \multicolumn{1}{c}{(0.03)} & \multicolumn{1}{c}{(0.09)} & \multicolumn{1}{c}{(0.18)} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{p-value}}} & \multicolumn{1}{c}{0.185} & \multicolumn{1}{c}{0.184} & \multicolumn{1}{c}{0.049} & \multicolumn{1}{c}{0.049} \\
+\midrule
+\multicolumn{2}{l}{\textit{p-value} (Reminder vs Anchor)}& \multicolumn{1}{c}{0.092}& \multicolumn{1}{c}{0.102}& \multicolumn{1}{c}{0.032}& \multicolumn{1}{c}{0.040}\\
+\multicolumn{2}{l}{Control Mean} &0.443&0.443&2.894&2.894\\
+\multicolumn{2}{l}{Observations} &4,643&4,643&4,643&4,643\\
+\midrule
+\multicolumn{1}{l}{\underline{\textit{Panel C: Median and Above}}} &  &  &  & &\\ 
+ \addlinespace
+\multicolumn{1}{l}{Any Treatment} & \multicolumn{1}{c}{\scriptsize $\hat{\beta}$} & \multicolumn{1}{c}{-0.006} & \multicolumn{1}{c}{-0.021} & \multicolumn{1}{c}{-0.04} & \multicolumn{1}{c}{-0.13} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{se}}} & \multicolumn{1}{c}{(0.01)} & \multicolumn{1}{c}{(0.04)} & \multicolumn{1}{c}{(0.09)} & \multicolumn{1}{c}{(0.29)} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{p-value}}} & \multicolumn{1}{c}{0.564} & \multicolumn{1}{c}{0.564} & \multicolumn{1}{c}{0.649} & \multicolumn{1}{c}{0.649} \\
+\multicolumn{1}{l}{Reminder} & \multicolumn{1}{c}{\scriptsize $\hat{\beta}$} & \multicolumn{1}{c}{-0.016} & \multicolumn{1}{c}{-0.032} & \multicolumn{1}{c}{-0.139} & \multicolumn{1}{c}{-0.278} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{se}}} & \multicolumn{1}{c}{(0.01)} & \multicolumn{1}{c}{(0.03)} & \multicolumn{1}{c}{(0.11)} & \multicolumn{1}{c}{(0.22)} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{p-value}}} & \multicolumn{1}{c}{0.26} & \multicolumn{1}{c}{0.26} & \multicolumn{1}{c}{0.211} & \multicolumn{1}{c}{0.212} \\
+\multicolumn{1}{l}{Anchor} & \multicolumn{1}{c}{\scriptsize $\hat{\beta}$} & \multicolumn{1}{c}{0} & \multicolumn{1}{c}{0} & \multicolumn{1}{c}{0.026} & \multicolumn{1}{c}{0.05} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{se}}} & \multicolumn{1}{c}{(0.01)} & \multicolumn{1}{c}{(0.02)} & \multicolumn{1}{c}{(0.1)} & \multicolumn{1}{c}{(0.19)} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\scriptsize{\textit{p-value}}} & \multicolumn{1}{c}{0.991} & \multicolumn{1}{c}{0.992} & \multicolumn{1}{c}{0.79} & \multicolumn{1}{c}{0.789} \\
+\midrule
+\multicolumn{2}{l}{\textit{p-value} (Reminder vs Anchor)}& \multicolumn{1}{c}{0.138}& \multicolumn{1}{c}{0.135}& \multicolumn{1}{c}{0.265}& \multicolumn{1}{c}{0.257}\\
+\multicolumn{2}{l}{Control Mean} &0.773&0.773&5.988&5.988\\
+\multicolumn{2}{l}{Observations} &5,760&5,760&5,760&5,760\\
+\midrule
+\midrule \midrule
+\multicolumn{6}{l}{\emph{Heteroskedasticity-robust standard-errors in parentheses}}\\
+\multicolumn{6}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+
+\end{tabular}
