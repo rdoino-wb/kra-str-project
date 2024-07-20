@@ -24,51 +24,6 @@
 
 {
   
-  setDT(table)
-  
-  # convert percentages
-  table[, `Corporate Tax Rate` := paste0(`Corporate Tax Rate`*100, "%")]
-  table[, Proportional := fifelse(!is.na(Proportional), paste0(Proportional*100, "%"), NA)]
-  table[, `Minimum Threshold (USD)` := format(round(`Minimum Threshold (USD)`, digits = 0), big.mark = ",")]
-  
-  
-  setorder(table, Country)
-  
-  # Create the LaTeX table
-  latex_table <- kable(
-    table, 
-    format = "latex", 
-    booktabs = TRUE, 
-    longtable = TRUE, 
-    escape = TRUE) %>%
-    kable_styling(latex_options = c("hold_position")) %>%
-    add_header_above(c(" " = 7)) 
-  latex_table <- unlist(strsplit(latex_table, "\n"))
-  
-  latex_table <- c(
-    "\\begin{tabular}{lcccccc}", 
-    "\\toprule",
-    "\\multicolumn{1}{c}{Country} & \\multicolumn{1}{c}{Minimum Threshold} & \\multicolumn{1}{c}{Proportional} & \\multicolumn{1}{c}{Differentiated} & \\multicolumn{1}{c}{Progressive} & \\multicolumn{1}{c}{Set Fee} & \\multicolumn{1}{c}{Corporate Tax} \\\\",
-    "\\multicolumn{1}{c}{} & \\multicolumn{1}{c}{(USD)} & \\multicolumn{1}{c}{} & \\multicolumn{1}{c}{(sector/area)} & \\multicolumn{1}{c}{} & \\multicolumn{1}{c}{(USD)} & \\multicolumn{1}{c}{Rate} \\\\",
-    latex_table[7:44], 
-    "\\bottomrule",
-    "\\multicolumn{7}{l}{\\rule{0pt}{1em}\\textit{Note: }} \\\\",
-    "\\multicolumn{7}{l}{\\rule{0pt}{1em}\\textsuperscript{*} Set fee at lower levels of turnover, percentage otherwise} \\\\",
-    "\\multicolumn{7}{l}{\\rule{0pt}{1em}\\textsuperscript{**} Set fee if no records, percentage otherwise} \\\\",
-    "\\end{tabular}")
-  
-  latex_table <- gsub("NA", "", latex_table)
-  
-  
-  # Save the table to a .tex file
-  write_lines(latex_table, file.path(table_output, "str_overview.tex"))
-  
-}
-
-# Table 2: ----
-
-{
-  
   # Filter and summarize data
   tab_summ <- copy(data)[dt_year %in% c(2016, 2018, 2020, 2023),
                   .(
@@ -163,7 +118,7 @@
   
 }
 
-# Table 3: ----
+# Table 2: ----
 
 {
   
@@ -236,3 +191,49 @@
   write_lines(table_lines, file.path(table_output, "tbl_patterns_filing.tex"))
   
 }
+
+# Table 4: ----
+
+{
+  
+  setDT(table)
+  
+  # convert percentages
+  table[, `Corporate Tax Rate` := paste0(`Corporate Tax Rate`*100, "%")]
+  table[, Proportional := fifelse(!is.na(Proportional), paste0(Proportional*100, "%"), NA)]
+  table[, `Minimum Threshold (USD)` := format(round(`Minimum Threshold (USD)`, digits = 0), big.mark = ",")]
+  
+  
+  setorder(table, Country)
+  
+  # Create the LaTeX table
+  latex_table <- kable(
+    table, 
+    format = "latex", 
+    booktabs = TRUE, 
+    longtable = TRUE, 
+    escape = TRUE) %>%
+    kable_styling(latex_options = c("hold_position")) %>%
+    add_header_above(c(" " = 7)) 
+  latex_table <- unlist(strsplit(latex_table, "\n"))
+  
+  latex_table <- c(
+    "\\begin{tabular}{lcccccc}", 
+    "\\toprule",
+    "\\multicolumn{1}{c}{Country} & \\multicolumn{1}{c}{Minimum Threshold} & \\multicolumn{1}{c}{Proportional} & \\multicolumn{1}{c}{Differentiated} & \\multicolumn{1}{c}{Progressive} & \\multicolumn{1}{c}{Set Fee} & \\multicolumn{1}{c}{Corporate Tax} \\\\",
+    "\\multicolumn{1}{c}{} & \\multicolumn{1}{c}{(USD)} & \\multicolumn{1}{c}{} & \\multicolumn{1}{c}{(sector/area)} & \\multicolumn{1}{c}{} & \\multicolumn{1}{c}{(USD)} & \\multicolumn{1}{c}{Rate} \\\\",
+    latex_table[7:44], 
+    "\\bottomrule",
+    "\\multicolumn{7}{l}{\\rule{0pt}{1em}\\textit{Note: }} \\\\",
+    "\\multicolumn{7}{l}{\\rule{0pt}{1em}\\textsuperscript{*} Set fee at lower levels of turnover, percentage otherwise} \\\\",
+    "\\multicolumn{7}{l}{\\rule{0pt}{1em}\\textsuperscript{**} Set fee if no records, percentage otherwise} \\\\",
+    "\\end{tabular}")
+  
+  latex_table <- gsub("NA", "", latex_table)
+  
+  
+  # Save the table to a .tex file
+  write_lines(latex_table, file.path(table_output, "str_overview.tex"))
+  
+}
+

@@ -8,7 +8,7 @@
 }
 
 
-# Balance Table ----
+# Table 5 ----
 
 {
   
@@ -301,7 +301,7 @@
   
 }
 
-# Table comparison SMS delivery vs not SMS delivery ----
+# Table 6 ----
 
 {
   
@@ -674,7 +674,7 @@
   )
 }
 
-# Figure Anchoring Intervention ----
+# Figure 16 ----
 
 {
   
